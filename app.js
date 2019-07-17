@@ -7,6 +7,7 @@ const cors = require("cors");
 
 const artists = require("./artists.json");
 const shows = require("./shows.json");
+const showsMap = require("./showsMap.json");
 
 app.use(cors());
 
@@ -22,6 +23,10 @@ app.get("/artists", (req, res) => {
 
 app.get("/shows", (req, res) => {
     res.status(200).send(shows);
+});
+
+app.get("/shows/map", (req, res) => {
+    res.status(200).send(showsMap);
 });
 
 
